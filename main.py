@@ -37,8 +37,9 @@ def display_user_signup():
             password_error = "Password cannot be blank"
         else:
             password_error = ""
-        
-        if verify != password:
+        if not verify:
+            verify_error = "Please verify password"
+        elif verify != password:
             verify_error = "Passwords do not match"
         else: verify_error = ""
 
